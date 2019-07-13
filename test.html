@@ -5,12 +5,18 @@
 <meta charset="UTF-8">
 </head>
 <body>
+    <h3>Facebook Login</h3>
+<div id="welcome" style="display:none">
+    <button onclick="login();">Facebook Login</button>
+</div>
+<div id="main" style="display:none">
+    Hello Friend
 <script>
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log(response);
-    let welcome = document.getElementById("#welcome");
-    let main = document.getElementById("#main");
+    let welcome = document.querySelector("#welcome");
+    let main = document.querySelector("#main");
     welcome.style.dispaly="none";
     main.style.display="none";
     if (response.status === 'connected') {//使用者已授權,開始應用程式
@@ -73,12 +79,7 @@
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
-<h3>Facebook Login</h3>
-<div id="welcome" style="display:none">
-    <button onclick="login();">Facebook Login</button>
-</div>
-<div id="main" style="display:none">
-    Hello Friend
+
 </div>
 </body>
 </html>
