@@ -11,7 +11,7 @@
     console.log(response);
     let welcome = document.querySelector("#welcome");
     let main = document.querySelector("#main");
-    welocome.style.dispaly="none";
+    welcome.style.dispaly="none";
     main.style.display="none";
     if (response.status === 'connected') {//使用者已授權,開始應用程式
       // Logged into your app and Facebook.
@@ -23,10 +23,10 @@
   }
 
   
-  function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
+  function login(){
+      FB.login(function(response){
+          statusChangeCallback(response);
+      });
   }
 
   window.fbAsyncInit = function() {
@@ -75,7 +75,7 @@
 -->
 <h3>Facebook Login</h3>
 <div id="welcome" style="display:none">
-    <button>Facebook Login</button>
+    <button onclick="login();">Facebook Login</button>
 </div>
 <div id="main" style="display:none">
     Hello Friend
