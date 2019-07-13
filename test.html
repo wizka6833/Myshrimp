@@ -5,12 +5,6 @@
 <meta charset="UTF-8">
 </head>
 <body>
-    <h3>Facebook Login</h3>
-<div id="welcome" style="display:none">
-    <button onclick="login();">Facebook Login</button>
-</div>
-<div id="main" style="display:none">
-    Hello Friend
 <script>
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
@@ -73,7 +67,13 @@
     });
   }
 </script>
-
+<h3>Facebook Login</h3>
+<div id="welcome" style="display:block">
+    <button onclick="login();">Facebook Login</button>
+</div>
+<div id="main" style="display:none">
+    Hello Friend
+</div>
 <!--
   Below we include the Login Button social plugin. This button uses
   the JavaScript SDK to present a graphical Login button that triggers
