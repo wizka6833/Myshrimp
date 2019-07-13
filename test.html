@@ -16,7 +16,7 @@
     if (response.status === 'connected') {//使用者已授權,開始應用程式
       // Logged into your app and Facebook.
       main.style.display="block";
-      start();
+      star();
     } else {//使用者未授權,鼓勵使用者授權
       // The person is not logged into your app or we are unable to tell.
      welcome.style.dispaly="block";
@@ -61,13 +61,15 @@
   // successful.  See statusChangeCallback() for when this call is made.
   function start() {
     //呼叫 Graph API : FB.api(連線網址,回呼函式(結果));/me代表當前使用者
-    FB.api('https://graph.facebook.com/1290250014460050', function(response) {
+    FB.api('/me', function(response) {
       console.log(response);
+      let main = document.querySelector("#main");
+      main.innerHTML = response.name;
     });
-  };
+  }
 </script>
 <h3>Facebook Login</h3>
-<div id="welcome" style="display:none">
+<div id="welcome" style="display:block">
     <button onclick="login();">Facebook Login</button>
 </div>
 <div id="main" style="display:none">
